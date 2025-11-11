@@ -1,0 +1,4 @@
+python-telegram-bot==20.8
+fastapi==0.115.5
+uvicorn==0.32.0
+cryptography==43.0.3
