@@ -193,7 +193,7 @@ application = (
 )
 
 conv = ConversationHandler(
-    entry_points=[MessageHandler(filters.Document.FILE_EXTENSION("p12"), handle_p12)],
+    entry_points=[MessageHandler(filters.ATTACHMENT & filters.Document.FileExtension("p12"), handle_p12)],
     states={
         ASK_OLD_PASS: [MessageHandler(filters.TEXT & ~filters.COMMAND, ask_old_pass)],
         ASK_NEW_PASS: [MessageHandler(filters.TEXT & ~filters.COMMAND, ask_new_pass)],
