@@ -41,6 +41,9 @@ MAX_FILE_SIZE_BYTES = MAX_FILE_SIZE_MB * 1024 * 1024
 # -------------------- FastAPI --------------------
 app = FastAPI()
 
+@app.get("/", response_class=PlainTextResponse)
+async def home():
+    return "Bot đang chạy OK. Dùng Telegram để đổi mật khẩu file .p12."
 # Conversation states
 ASK_OLD_PASS, ASK_NEW_PASS = range(2)
 
